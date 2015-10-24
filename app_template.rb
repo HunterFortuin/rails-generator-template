@@ -63,6 +63,7 @@ insert_into_file "config/environments/production.rb", "config.action_mailer.defa
 # Set up stylesheet folder
 inside('app/assets') do
     run "svn checkout https://github.com/HunterFortuin/rails-generator-template/trunk/stylesheets"
+    remove_file "stylesheets/application.css"
 end
 
 # Initalize Git
