@@ -1,0 +1,108 @@
+/* ==|====================
+   base/type
+   Typographic Styles
+   ======================= */
+
+h1, h2, h3, p { margin: 0; }
+h1,h2,h3,p {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.01);
+  text-rendering: auto;
+}
+
+h1, .h1 {
+  font: normal 700 96px/1.25 $font;//pixel fallback
+  font: normal 700 9.6rem/1.25 $font;//rem version
+  margin-bottom: 30px;
+}
+
+h2, .h2 {
+  font: normal 700 69px/1.3044 $font;
+  font: normal 700 6.9rem/1.3044 $font;
+  margin-bottom: 30px;
+}
+
+h3, .h3 {
+  font: normal 700 36px/1.6667 $font;
+  font: normal 700 3.6rem/1.6667 $font;
+  margin-bottom: 30px;
+}
+
+p {
+  font: normal 400 20px/1.5 $font;
+  font: normal 400 2rem/1.5 $font;
+  margin-bottom: 30px;
+}
+
+small, .small {
+  font: normal 400 15px/2 $font;
+  font: normal 400 1.5rem/2 $font;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  margin: 0;
+  margin-top: $md;
+  margin-bottom: 18px;//($md - 2px)
+  background: $black;
+}
+
+blockquote {
+  margin: 0;
+  margin-bottom: $md;
+  padding-left: $md;
+  border-left: 2px solid $yellow;
+}
+
+.long-word {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+@media screen and (max-width:750px) {
+  h1, .h1 {
+    font: normal 700 69px/1.30434 $font;
+    font: normal 700 6.9rem/1.30434 $font;
+    margin-bottom: 30px;
+  }
+
+  h2, .h2 {
+    font: normal 700 36px/1.6667 $font;
+    font: normal 700 3.6rem/1.6667 $font;
+    margin-bottom: 30px;
+  }
+
+  h3, .h3 {
+    font: normal 700 20px/1.5 $font;
+    font: normal 700 2rem/1.5 $font;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font: normal 400 16px/1.875 $font;
+    font: normal 400 1.6rem/1.875 $font;
+    margin-bottom: 15px;
+  }
+
+  small, .small {
+    font: normal 400 13px/1.1538 $font;
+    font: normal 400 1.3rem/1.1538 $font;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+}

@@ -1,0 +1,76 @@
+/* ==|====================
+   base/global
+   Global Site Styles
+   ======================= */
+html {
+    font-size: 62.5%;
+    height: 100%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    height: 100%;
+    font: normal 400 20px/1.5 $font;
+    font: normal 400 2rem/1.5 $font;
+    color: $black;
+    background-color: $white;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+    //use body element as a wrapper on large screens
+    body {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:750px) {
+    //shrink font size on small screens
+    body {
+        font: normal 400 16px/1.875 $font;
+        font: normal 400 1.6rem/1.875 $font;
+    }
+}
+
+//Resets for list elements
+ul, ol {
+    margin: 0;
+    padding-left: $md;
+    > ul,
+    > ol {
+        padding-left: $md;
+    }
+}
+
+// Responsive images and iframes
+iframe,
+img {
+    max-width: 100%;
+}
+
+// Clearfix class '.cf'
+// Used on parent elements in which all children are floated
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+// Styling for highlighted text
+::-moz-selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}
+::selection {
+    background: $black;
+    color: $white;
+    text-shadow: none;
+}

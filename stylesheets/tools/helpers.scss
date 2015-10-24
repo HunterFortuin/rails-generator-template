@@ -1,0 +1,25 @@
+// Center block elements
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+}
+
+// Text aligns
+.align-left {
+    text-align: left !important;
+}
+.align-right {
+    text-align: right !important;
+}
+.align-center {
+    text-align: center;
+}
+
+// Floats
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
