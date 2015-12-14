@@ -70,8 +70,8 @@ end
 git :init
 
 # Add database.yml to gitignore
-append_file ".gitignore", "config/database.yml"
-append_file ".gitignore", "TODO"
+append_file ".gitignore", "\nconfig/database.yml"
+append_file ".gitignore", "\nTODO"
 
 # Create an example_database.yml file
 run "cp config/database.yml config/example_database.yml"
