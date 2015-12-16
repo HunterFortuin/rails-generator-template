@@ -1,6 +1,13 @@
+require_relative 'devise_generator'
+
 # Create correct version of README
 remove_file "README.rdoc"
 create_file "README.md", "TODO"
+
+if yes? "Will this application have devise? (yes/no)"
+    devise_generator = DeviseGenerator.new
+    devise_generator.run_install
+end
 
 # Write Gems to Gemfile
 gem "figaro"
@@ -56,9 +63,9 @@ gsub_file("config/routes.rb", "get 'static_pages/products'\n", '') if @products
 gsub_file("config/routes.rb", /^\s*#.*\n/, '') # removes all commments from routes
 
 # Set up environment files
-insert_into_file "config/environments/development.rb", "config.action_mailer.delivery_method = :letter_opener", :after => "Rails.application.configure do\n"
+insert_into_file "config/environments/development.rb", "  config.action_mailer.delivery_method = :letter_opener\n", :after => "Rails.application.configure do\n"
 name = ask("What's the URL of this site?")
-insert_into_file "config/environments/production.rb", "config.action_mailer.default_url_options = { host: '#{name}' }", after: "Rails.application.configure do\n"
+insert_into_file "config/environments/production.rb", "  config.action_mailer.default_url_options = { host: '#{name}' }\n", after: "Rails.application.configure do\n"
 
 # Set up stylesheet folder
 inside('app/assets') do
